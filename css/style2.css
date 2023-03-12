@@ -1,0 +1,82 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #F54EA2, #2F80ED);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align to the top of the page */
+    align-items: center;
+}
+
+img {
+    display: block;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 64px;
+    /* move image to the top of the page */
+    margin-bottom: 24px;
+    border: 2px solid white;
+    pointer-events: none;
+    /* disable mouse events on the image */
+}
+
+button {
+    background: white;
+    color: #F54EA2;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    border: none;
+    padding: 16px 64px;
+    /* Increase padding to make the button wider */
+    border-radius: 50px;
+    /* Make the button full round */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease-out, transform 0.2s ease-out;
+    animation: shake 1s ease-in-out;
+    animation-fill-mode: forwards;
+    border: 2px solid white;
+}
+
+button:hover {
+    background: linear-gradient(to right, #F54EA2, #2F80ED);
+    background-size: 200% auto;
+    background-position: left center;
+    transform: translateX(5px);
+    transition: all 0.2s ease-out;
+    border: 2px solid white;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    10%,
+    90% {
+        transform: translateX(-5px);
+    }
+    20%,
+    80% {
+        transform: translateX(5px);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translateX(-5px);
+    }
+    40%,
+    60% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

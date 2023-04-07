@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style2.css">
+  <script src="script.js"></script>
+  <link rel="apple-touch-icon" href="/logo192.png" />
+  <title>Private Profile</title>
+</head>
+
+<body>
+  <img src="img/300.jpg" alt="Profile Picture">
+  <p id="countdown">You will be automatically redirected to my profile</p>
+  
+  <script>
+    var app = "vnd.youtube://youtube.com/redirect?event=comments&redir_token=QUFFLUhqbGxBQ2FpYS1SQm41ZW9CM1FzakhTZWdETERtZ3xBQ3Jtc0tsc3lHbDNlNnBJWTFMajcxNU1nYWc3ZGhkdDNIZmFaZWlNb2lmYU5uZEZvdzRyOV9mYW5uajdnNVdmS1UxVUg4V2piN0JGY0JoM2VHano5N28zM1gyNEU3amx6UTZYVmxBLTFxVnJEMFZ3ZHFGV2RtVQ&q=https%3A%2F%2Fv.ht%2FJkrjw&html_redirect=1";
+
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+
+        if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          window.location.href = app;
+          window.setTimeout(function() {
+            window.location.href = mobileFallback;
+          }, 25);
+        } else {
+          window.location.href = desktopFallback;
+        }
+
+        function killPopup() {
+          window.removeEventListener('pagehide', killPopup);
+        }
+
+        window.addEventListener('pagehide', killPopup);
+      }, 10);
+    });
+  </script>
+
+</body>
+</html>
